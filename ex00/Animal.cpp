@@ -27,14 +27,11 @@ Animal::~Animal()
 
 Animal::Animal(const Animal& other)
 {
-    // arbitrary for this exersise, should ideally be prototype pattern(clone)
-    // will call Animal->makeSound();
     type = other.type;
 }
 
 Animal& Animal::operator=(const Animal& other)
 {
-    // arbitrary for this exersise
     if (&other == this)
         return *this;
     type = other.type;

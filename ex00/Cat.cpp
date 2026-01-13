@@ -25,19 +25,16 @@ Cat::~Cat()
     std::cout << C_BLUE << "Cat popped out of existance!\n" << C_END;
 }
 
-Cat::Cat(const Cat& other)
+Cat::Cat(const Cat& other) : Animal(other)
 {
-    // arbitrary for this exersise, should ideally be prototype pattern(clone)
-    // will call Animal->makeSound();
-    type = other.type;
+
 }
 
 Cat& Cat::operator=(const Cat& other)
 {
-    // arbitrary for this exersise
     if (&other == this)
         return *this;
-    type = other.type;
+    Animal::operator=(other);
     return *this;
 }
 

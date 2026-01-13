@@ -25,16 +25,15 @@ WrongCat::~WrongCat()
     std::cout << C_BLUE << "WrongCat popped out of existance!\n" << C_END;
 }
 
-WrongCat::WrongCat(const WrongCat& other)
+WrongCat::WrongCat(const WrongCat& other) : WrongAnimal(other)
 {
-    type = other.type;
 }
 
 WrongCat& WrongCat::operator=(const WrongCat& other)
 {
     if (&other == this)
         return *this;
-    type = other.type;
+    WrongAnimal::operator=(other);
     return *this;
 }
 

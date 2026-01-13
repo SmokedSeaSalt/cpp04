@@ -25,23 +25,18 @@ Dog::~Dog()
     std::cout << C_BLUE << "Dog popped out of existance!\n" << C_END;
 }
 
-Dog::Dog(const Dog& other)
-{
-    // arbitrary for this exersise, should ideally be prototype pattern(clone)
-    // will call Animal->makeSound();
-    type = other.type;
-}
+Dog::Dog(const Dog& other) : Animal(other) {}
 
 Dog& Dog::operator=(const Dog& other)
 {
     // arbitrary for this exersise
     if (&other == this)
         return *this;
-    type = other.type;
+    Animal::operator=(other);
     return *this;
 }
 
 void Dog::makeSound(void) const
 {
-	std::cout << C_GREEN << "The dog goes woof!\n" << C_END;
+    std::cout << C_GREEN << "The dog goes woof!\n" << C_END;
 }
