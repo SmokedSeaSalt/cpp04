@@ -29,7 +29,6 @@ Dog::Dog(const Dog& other) : Animal(other) {}
 
 Dog& Dog::operator=(const Dog& other)
 {
-    // arbitrary for this exersise
     if (&other == this)
         return *this;
     Animal::operator=(other);
