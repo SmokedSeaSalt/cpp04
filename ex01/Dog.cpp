@@ -6,7 +6,7 @@
 /*   By: mvan-rij <mvan-rij@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/11 17:23:24 by mvan-rij          #+#    #+#             */
-/*   Updated: 2026/01/11 17:31:38 by mvan-rij         ###   ########.fr       */
+/*   Updated: 2026/01/15 10:51:06 by mvan-rij         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,9 @@ Dog& Dog::operator=(const Dog& other)
 void Dog::makeSound(void) const
 {
 	std::cout << C_GREEN << "The dog goes woof!\n" << C_END;
+}
+
+Brain* Dog::getBrain(void) const
+{
+    return brain_;
 }

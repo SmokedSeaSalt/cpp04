@@ -6,7 +6,7 @@
 /*   By: mvan-rij <mvan-rij@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/11 17:16:45 by mvan-rij          #+#    #+#             */
-/*   Updated: 2026/01/11 17:31:24 by mvan-rij         ###   ########.fr       */
+/*   Updated: 2026/01/15 10:50:54 by mvan-rij         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ Cat& Cat::operator=(const Cat& other)
 {
     if (this == &other)
         return *this;
-        
+
     Animal::operator=(other);
     delete brain_;
     brain_ = new Brain(*other.brain_);
@@ -46,4 +46,9 @@ Cat& Cat::operator=(const Cat& other)
 void Cat::makeSound(void) const
 {
 	std::cout << C_GREEN << "The cat says meow!\n" << C_END;
+}
+
+Brain* Cat::getBrain(void) const
+{
+    return brain_;
 }

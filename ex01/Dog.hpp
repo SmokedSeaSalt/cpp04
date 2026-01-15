@@ -6,7 +6,7 @@
 /*   By: mvan-rij <mvan-rij@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/11 17:22:53 by mvan-rij          #+#    #+#             */
-/*   Updated: 2026/01/11 17:26:13 by mvan-rij         ###   ########.fr       */
+/*   Updated: 2026/01/15 10:51:16 by mvan-rij         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class Dog : public Animal
         ~Dog();
 
         void makeSound(void) const;
+        Brain* getBrain(void) const;
 
     private:
         Brain* brain_;
