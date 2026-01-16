@@ -6,7 +6,7 @@
 /*   By: mvan-rij <mvan-rij@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/11 16:31:13 by mvan-rij          #+#    #+#             */
-/*   Updated: 2026/01/15 10:54:58 by mvan-rij         ###   ########.fr       */
+/*   Updated: 2026/01/16 10:57:46 by mvan-rij         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,17 @@
 int main()
 {
     Animal* animals[10];
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 3; i++)
         animals[i] = new Cat();
-    for (int i = 5; i < 10; i++)
+    for (int i = 3; i < 6; i++)
         animals[i] = new Dog();
 
-    Animal* testcat = animals[0];
+    Animal* testcat = animals[0]->clone();
 
-    std::cout << static_cast<Cat*>(testcat)->getBrain() << "\n";
-    std::cout << static_cast<Cat*>(animals[0])->getBrain() << "\n";
+    std::cout << testcat->getBrain() << "\n";
+    std::cout << animals[0]->getBrain() << "\n";
 
-
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < 6; i++)
         delete animals[i];
 
     delete testcat;

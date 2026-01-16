@@ -6,7 +6,7 @@
 /*   By: mvan-rij <mvan-rij@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/11 17:23:24 by mvan-rij          #+#    #+#             */
-/*   Updated: 2026/01/15 10:51:06 by mvan-rij         ###   ########.fr       */
+/*   Updated: 2026/01/16 10:52:40 by mvan-rij         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,13 @@ Dog::~Dog()
 
 Dog::Dog(const Dog& other) : Animal(other)
 {
+    std::cout << C_BLUE << "Dog is cloned!\n" << C_END;
     brain_ = new Brain(*other.brain_);
 }
 
 Dog& Dog::operator=(const Dog& other)
 {
+    std::cout << C_BLUE << "Dog data transfer!\n" << C_END;
     if (this == &other)
         return *this;
 
@@ -41,6 +43,11 @@ Dog& Dog::operator=(const Dog& other)
     delete brain_;
     brain_ = new Brain(*other.brain_);
     return *this;
+}
+
+Dog* Dog::clone() const
+{
+    return new Dog(*this);
 }
 
 void Dog::makeSound(void) const

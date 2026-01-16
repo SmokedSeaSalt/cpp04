@@ -14,14 +14,17 @@ Brain::~Brain()
 
 Brain::Brain(const Brain& other)
 {
+    std::cout << C_BLUE << "Brain is cloned too!\n" << C_END;
     for (std::string idea : other.ideas_)
         getIdea(idea);
 }
 
 Brain& Brain::operator=(const Brain& other)
 {
+    std::cout << C_BLUE << "Brain data transfer started!\n" << C_END;
     if (this == &other)
         return (*this);
+
     for (int i = 0; i < BRAIN_SIZE - 1; i++)
     {
         ideas_[i].clear();
@@ -37,9 +40,12 @@ void Brain::getIdea(std::string idea)
         if (!ideas_[i].empty())
         {
             ideas_[i] = idea;
+        }
+        else
+        {
+            if (i == BRAIN_SIZE - 1)
+                std::cout << C_RED << "Not enough braincells left!\n" << C_END;
             return;
         }
     }
-    std::cout << C_RED << "Not enough braincells left!\n" << C_END;
-    return;
 }
