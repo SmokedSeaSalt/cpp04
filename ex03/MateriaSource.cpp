@@ -1,7 +1,7 @@
 #include "MateriaSource.hpp"
 #include "AMateria.hpp"
 
-MateriaSource::MateriaSource() {}
+MateriaSource::MateriaSource() : materia_{nullptr} {}
 
 MateriaSource::~MateriaSource()
 {
@@ -12,11 +12,10 @@ MateriaSource::~MateriaSource()
     }
 }
 
-MateriaSource::MateriaSource(const MateriaSource& other)
+MateriaSource::MateriaSource(const MateriaSource& other) : materia_{nullptr}
 {
     for (int i = 0; i < KNOWN_MATERIA; i++)
     {
-        delete materia_[i];
         if (other.materia_[i] == nullptr)
             materia_[i] = nullptr;
         else

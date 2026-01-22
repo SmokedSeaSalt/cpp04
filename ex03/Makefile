@@ -4,7 +4,7 @@
 
 NAME = materia
 CPP = c++
-CPPFLAGS = -Wall -Werror -Wextra -MMD
+CPPFLAGS = -Wall -Werror -Wextra -MMD -g
 CCDEBUG = -g
 
 ################################################################################
@@ -17,6 +17,7 @@ SRC = 	main.cpp \
 		AMateria.cpp \
 		Character.cpp \
 		Cure.cpp \
+		Fireball.cpp \
 		Ice.cpp \
 		MateriaSource.cpp
 

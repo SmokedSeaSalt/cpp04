@@ -1,6 +1,6 @@
 #include "Character.hpp"
 
-Character::Character(const std::string& name) : name_(name) {}
+Character::Character(const std::string& name) : name_(name), inventory_{nullptr} {}
 
 Character::~Character()
 {
@@ -11,11 +11,10 @@ Character::~Character()
     }
 }
 
-Character::Character(const Character& other)
+Character::Character(const Character& other) : name_(other.name_), inventory_{nullptr}
 {
     for (int i = 0; i < INVENTORY_SIZE; i++)
     {
-        delete inventory_[i];
         if (other.inventory_[i] == nullptr)
             inventory_[i] = nullptr;
         else
