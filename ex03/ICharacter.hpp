@@ -6,15 +6,17 @@
 /*   By: mvan-rij <mvan-rij@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 14:31:04 by mvan-rij          #+#    #+#             */
-/*   Updated: 2026/01/16 14:31:24 by mvan-rij         ###   ########.fr       */
+/*   Updated: 2026/01/22 14:35:58 by mvan-rij         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_HPP
 #define ICHARACTER_HPP
 
-#include <string>
 #include "AMateria.hpp"
+#include <string>
+
+class AMateria;
 
 class ICharacter
 {

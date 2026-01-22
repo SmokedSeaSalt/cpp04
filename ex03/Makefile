@@ -2,7 +2,7 @@
 # Basics                                                                       #
 ################################################################################
 
-NAME = abstract
+NAME = materia
 CPP = c++
 CPPFLAGS = -Wall -Werror -Wextra -MMD
 CCDEBUG = -g
@@ -14,10 +14,11 @@ CCDEBUG = -g
 BUILD_DIR = build
 
 SRC = 	main.cpp \
-		AAnimal.cpp \
-		Cat.cpp \
-		Dog.cpp \
-		Brain.cpp
+		AMateria.cpp \
+		Character.cpp \
+		Cure.cpp \
+		Ice.cpp \
+		MateriaSource.cpp
 
 OBJ = $(patsubst %.cpp,$(BUILD_DIR)/%.o,$(SRC))
 DEP = ${OBJ:.o=.d}
