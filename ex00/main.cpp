@@ -34,8 +34,10 @@ int main()
 
     const WrongAnimal* wrongmeta = new WrongAnimal();
     const WrongAnimal* k         = new WrongCat();
+    const WrongCat* l         = new WrongCat();
     std::cout << k->getType() << " " << std::endl;
     k->makeSound(); // will not output the cat sound!
+    l->makeSound(); // will output the cat sound!
     wrongmeta->makeSound();
 
     delete wrongmeta;
